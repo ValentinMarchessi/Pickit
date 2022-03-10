@@ -1,0 +1,21 @@
+@mixin button {
+    font-family: 'Manjari';
+    color: white;
+    background-color: #C7476A;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 4px;
+    border: none;
+    padding: 5px 10px;
+    transition: all .1s ease-in-out;
+    &:hover{
+        filter: brightness(1.4);
+    }
+    &:active{
+        transform: scale(.8);
+    }
+}
+
+@mixin textInput{
+    
+}

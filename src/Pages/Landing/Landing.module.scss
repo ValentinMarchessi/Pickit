@@ -1,0 +1,32 @@
+@use '../../SASS/mixins.scss' as Mixins;
+
+.body{
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    #intro{
+        display: grid;
+        grid-template-columns: auto 50%;
+        justify-content: center;
+        align-items: center;
+        gap: 5%;
+        position: relative;
+        width: 100%; 
+        #sideblock{
+            h1{
+                font-size: 100px;
+            }
+        }
+        #collage{
+            width: inherit;
+            clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+        }
+    }
+
+    button{
+        @include Mixins.button;
+    }
+}

@@ -1,0 +1,42 @@
+@use '../../SASS/mixins.scss' as Mixins;
+
+.box{
+    display: flex;
+    flex-direction: column;
+    background-color: #252b2e;
+    align-items: center;
+    padding: .5rem 1.5rem;
+    border-radius: 10px;
+    form{
+        display: inherit;
+        flex-direction: inherit;
+        align-items: center;
+        gap: 20px;
+
+        .inputs{
+            display: flex;
+            flex-direction: column;
+        }
+
+        input[type=submit]{
+            width: 40%;
+            height: 2.2rem;
+            @include Mixins.button;
+        }
+    }
+    .errorContainer{
+        height: 1.5em;
+        margin-top: 1rem;
+        span{
+            color: rgb(255, 73, 73);
+        }
+    }
+    .signUp{
+        margin-top: 1rem;
+        font-size: 15px;
+        font-weight: 300;
+        a{
+            color: rgb(98, 179, 255);
+        }
+    }
+}

@@ -1,0 +1,22 @@
+#container{
+    border-radius: 50px;
+    overflow: hidden;
+    width: 80%;
+    height: 20px;
+    padding: 3px 5px;
+    box-shadow: 1px 1px 4px rgb(80, 80, 80);
+    position: relative;
+    #bar{
+        position: relative;
+        border-radius: inherit;
+        overflow: hidden;
+        height: inherit;
+        transition: all 1s ease-in-out;
+        #background{
+            position: relative;
+            width: 100%;
+            height: inherit;
+            background-color: chartreuse;
+        }
+    }    
+}

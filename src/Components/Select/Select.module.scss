@@ -1,0 +1,30 @@
+.container{
+    cursor: pointer;
+    width: 100%;
+    position: relative;
+    margin-top: 2em;
+    #pill{
+        position: relative;
+        border: 1px solid white;
+        border-radius: 5px;
+        padding: .8rem .6rem;
+        height: 1.5rem;
+        span{
+            pointer-events: none;
+        }
+    }
+    #dropdown{
+        visibility: collapse;
+        width: -webkit-fill-available;
+        padding: 5px 20px 10px 20px;
+        margin: 0;
+        z-index: 10;
+        position: absolute;
+        list-style: none;
+        background-color: gray;
+
+        &.active{
+            visibility: visible;
+        }
+    }
+}

@@ -1,0 +1,7 @@
+.locked{
+    z-index: 1000;
+    filter: contrast(0.5) blur(1px);
+    background-color: transparent;
+    cursor:wait;
+    pointer-events: none;
+}
