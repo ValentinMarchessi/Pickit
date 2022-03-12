@@ -18,7 +18,7 @@ ReactDOM.render(
 						<Route path="/" element={<App />}>
 							<Route index element={<Landing />} />
 						</Route>
-						<Route path="/debug" element={<Debug component={<Login />} />} />
+						<Route path="/debug" element={<Debug component={<Login/>} />} />
 					</Routes>
 				</BrowserRouter>
 			</PersistGate>
