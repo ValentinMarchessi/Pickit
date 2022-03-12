@@ -10,14 +10,9 @@ const persistConfig = {
 	storage,
 	blacklist: ["user"],
 }
-const userPersistConfig = {
-	key: "user",
-	storage: storage,
-	blacklist: ["error","token"],
-};
 
 const rootReducer = combineReducers({
-	user: persistReducer(userPersistConfig,userReducer),
+	user: userReducer,
 });
 
 export default rootReducer;

@@ -35,7 +35,8 @@ export function logIn(user: LogInRequest) {
 					throw error;
 				});
 		} catch (error: any) {
-			dispatch(logIn_Failure(error.response.data));
+			if(!error.response) dispatch(logIn_Failure({status: 503, message: "Could not reach server."}))
+			else dispatch(logIn_Failure(error.response.data));
 		}
 	};
 }

@@ -1,4 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import persistReducer from "redux-persist/es/persistReducer";
+import storage from "redux-persist/es/storage";
 
 interface UserState {
 	user?: {
@@ -17,7 +19,6 @@ const initialState = {
 	user: undefined,
 	fetching: false,
 	error: undefined,
-	token: undefined,
 } as UserState;
 
 const userSlice = createSlice({
@@ -55,6 +56,12 @@ const userSlice = createSlice({
 	},
 });
 
+const userPersistConfig = {
+	key: "user",
+	storage: storage,
+	blacklist: ["error", "fetching"],
+};
+
 export const {
 	logIn_Start,
 	logIn_Success,
@@ -65,4 +72,6 @@ export const {
 	signUp_Error
 } = userSlice.actions;
 
-export default userSlice.reducer;
+const userReducer = persistReducer(userPersistConfig, userSlice.reducer);
+
+export default userReducer;

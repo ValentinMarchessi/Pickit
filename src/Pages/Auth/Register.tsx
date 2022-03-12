@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import Lock from "../../Components/Lock/Lock";
 import { useSelector } from "react-redux";
 import { RootState } from "../../Redux/store";
-import { SignUpResponse } from "../../Redux/Actions/User/signUp";
+import { SignUpResponse, signUp } from "../../Redux/Actions/User/signUp";
 import { Select } from "../../Components";
 
 export default function Register() {
@@ -15,24 +15,28 @@ export default function Register() {
 	function handleForm(event: React.FormEvent<HTMLFormElement>) {
 		event.preventDefault();
 		const form = new FormData(event.currentTarget);
-		const entries: string[] = [];
-		for (const value of form.values()) {
-			entries.push(String(value));
+		const entries: [string,FormDataEntryValue][] = [];
+		for (const value of form.entries()) {
+			entries.push(value);
 		}
+		const signUpData = Object.fromEntries(entries);
+		dispatch(signUp(signUpData));
 	}
 
 	const form = (
 		<div className={styles.box}>
-			<form onSubmit={handleForm} autoComplete="false">
+			<form onSubmit={handleForm} autoComplete="off">
 				<div className={styles.inputs}>
 					<Input label="Username" name="name" type="text" />
 					<Input label="Password" name="password" type="password" />
 					<Input label="Confirm Password" name="confirmPassword" type="password" />
 					<Select
 						label="Gender"
+						name="gender"
 						options={["Male", "Female", "Other"]}
 					/>
 					<Input label="E-Mail" name="email" type="email" />
+					<Input label="Birthday" name="birthday" type="date"/>
 				</div>
 				<input type="submit" value="Register" />
 			</form>

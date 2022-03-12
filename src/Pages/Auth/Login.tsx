@@ -5,9 +5,13 @@ import { logIn, LogInResponse, LogInRequest } from "../../Redux/Actions/User/log
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../Redux/store";
 import Lock from "../../Components/Lock/Lock";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router";
 
 export default function Login() {
 	const dispatch = useDispatch();
+	const navigate = useNavigate();
+	const [submitted, setSubmitted] = useState(false);
 	const { fetching, error } = useSelector<RootState, LogInResponse>((store) => store.user);
 
 	function handleForm(event: React.FormEvent<HTMLFormElement>) {
@@ -22,15 +26,24 @@ export default function Login() {
 			password: entries[1],
 		} as LogInRequest;
 		dispatch(logIn(user));
+		setSubmitted(true);
 	}
+
+	useEffect(() => {
+		if (submitted && !error && !fetching) {
+			navigate('/success');
+		}
+	}, [submitted, error, fetching]);
 
 	const form = (
 		<div className={styles.box}>
-			<form onSubmit={handleForm} autoComplete="false">
+			<form onSubmit={handleForm} autoComplete="off">
 				<div className={styles.inputs}>
 					<Input label="Username" name="name" type="text" />
 					<Input label="Password" name="password" type="password" />
-					<Link id={styles.passwordRecovery} to="passwordRecovery">Forgot my password</Link>
+					<Link id={styles.passwordRecovery} to="passwordRecovery">
+						Forgot my password
+					</Link>
 				</div>
 				<input type="submit" value="Log In" />
 			</form>
