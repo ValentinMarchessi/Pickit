@@ -2,9 +2,9 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface UserState {
 	user?: {
-		name?: string;
-		token?: string;
-		avatar?: string;
+		name: string;
+		token: string;
+		avatar: string;
 	};
 	fetching: boolean;
 	error?: {
@@ -14,11 +14,7 @@ interface UserState {
 }
 
 const initialState = {
-	user: {
-		name: undefined,
-		token: undefined,
-		avatar: undefined,
-	},
+	user: undefined,
 	fetching: false,
 	error: undefined,
 	token: undefined,
