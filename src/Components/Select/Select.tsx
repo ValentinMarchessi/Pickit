@@ -6,17 +6,19 @@ interface SelectProps {
 	options: string[] | number[];
 	multiple?: boolean;
 	onSelect?: (event: React.BaseSyntheticEvent) => any;
+	name: string;
 }
 
-export default function Select({ label, options, multiple = false, onSelect }: SelectProps) {
+export default function Select({ label, options, multiple = false, onSelect, name }: SelectProps) {
 	const [selected, setSelected] = useState<string>();
 
-	function handleSelect(event: React.MouseEvent<HTMLButtonElement>) {
+	function handleSelect(event: React.MouseEvent<HTMLInputElement>) {
 		const { value } = event.currentTarget;
 		setSelected(String(value));
 		onSelect && onSelect(event);
 	}
 	function handleDropdown(cases: "open" | "close") {
+		//Closure
 		return (
 			event:
 				| React.PointerEvent<HTMLDivElement>
@@ -46,7 +48,7 @@ export default function Select({ label, options, multiple = false, onSelect }: S
 			}
 		};
 	}
-	
+
 	const events = {
 		onClick: handleDropdown("open"),
 		onFocus: handleDropdown("open"),
@@ -62,9 +64,16 @@ export default function Select({ label, options, multiple = false, onSelect }: S
 			</div>
 			<div id={styles.dropdown}>
 				{options.map((option) => (
-					<button key={option} value={option} onClick={handleSelect}>
-						{option}
-					</button>
+					<React.Fragment key={option}>
+						<input
+							name={name}
+							id={String(option)}
+							type={"radio"}
+							value={option}
+							onClick={handleSelect}>	
+						</input>
+						<label id={styles.option} htmlFor={String(option)}>{option}</label>
+					</React.Fragment>
 				))}
 			</div>
 		</div>
