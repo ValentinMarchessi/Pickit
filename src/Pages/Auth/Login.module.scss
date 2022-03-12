@@ -16,6 +16,13 @@
         .inputs{
             display: flex;
             flex-direction: column;
+            #passwordRecovery{
+                margin-top: 5px;
+                color: rgb(98, 179, 255);
+                text-indent: 5px;
+                font-size: 12px;
+                align-self: flex-start;
+            }
         }
 
         input[type=submit]{
@@ -23,6 +30,7 @@
             height: 2.2rem;
             @include Mixins.button;
         }
+
     }
     .errorContainer{
         height: 1.5em;

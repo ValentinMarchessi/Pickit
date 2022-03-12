@@ -1,7 +1,39 @@
-.locked{
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     z-index: 1000;
-    filter: contrast(0.5) blur(1px);
-    background-color: transparent;
-    cursor:wait;
-    pointer-events: none;
+    position: relative;
+    #spinner{
+        $size: 30px;
+        z-index: 1001;
+        width: $size;
+        height: $size;
+        border: ($size/4) solid rgb(221, 67, 170);
+        border-radius: 50%;
+        border-top-color: transparent;
+        border-left-color: transparent;
+        border-right-color: transparent;
+        position: absolute;
+
+        animation: spin .3s linear infinite;
+    }
+    .locked{
+        filter: opacity(0.5) contrast(.5);
+        background-color: transparent;
+        cursor:wait;
+        pointer-events: none;
+    
+    
+    }
+    
+    @keyframes spin {
+        from{
+            transform: rotate(0deg);
+        }
+        to{
+            transform: rotate(360deg);
+        }
+    }
+
 }
