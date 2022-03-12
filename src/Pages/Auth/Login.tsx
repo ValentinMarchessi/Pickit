@@ -1,7 +1,7 @@
 import styles from "./Login.module.scss";
 import Input from "../../Components/Input/Input";
 import { Link } from "react-router-dom";
-import { logIn, LogInResponse, UserInfo } from "../../Redux/Actions/User/logIn";
+import { logIn, LogInResponse, LogInRequest } from "../../Redux/Actions/User/logIn";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../Redux/store";
 import Lock from "../../Components/Lock/Lock";
@@ -10,9 +10,9 @@ export default function Login() {
 	const dispatch = useDispatch();
 	const { fetching, error } = useSelector<RootState, LogInResponse>((store) => store.user);
 
-	function handleForm(event: React.FormEvent<HTMLFormElement> & { target: HTMLFormElement }) {
+	function handleForm(event: React.FormEvent<HTMLFormElement>) {
 		event.preventDefault();
-		const form = new FormData(event.target);
+		const form = new FormData(event.currentTarget);
 		const entries: string[] = [];
 		for (const value of form.values()) {
 			entries.push(String(value));
@@ -20,8 +20,8 @@ export default function Login() {
 		let user = {
 			identifier: entries[0],
 			password: entries[1],
-		} as UserInfo;
-		logIn(dispatch, user);
+		} as LogInRequest;
+		dispatch(logIn(user));
 	}
 
 	const form = (
@@ -30,6 +30,7 @@ export default function Login() {
 				<div className={styles.inputs}>
 					<Input label="Username" name="name" type="text" />
 					<Input label="Password" name="password" type="password" />
+					<Link id={styles.passwordRecovery} to="passwordRecovery">Forgot my password</Link>
 				</div>
 				<input type="submit" value="Log In" />
 			</form>

@@ -1,7 +1,6 @@
 import styles from "./Login.module.scss";
 import Input from "../../Components/Input/Input";
 import { Link } from "react-router-dom";
-import { logIn, UserInfo } from "../../Redux/Actions/User/logIn";
 import { useDispatch } from "react-redux";
 import Lock from "../../Components/Lock/Lock";
 import { useSelector } from "react-redux";
@@ -13,19 +12,13 @@ export default function Register() {
     const { error, fetching } = useSelector<RootState, SignUpResponse>((store) => store.user);
 	const dispatch = useDispatch();
 
-	function handleForm(event: React.FormEvent<HTMLFormElement> & { target: HTMLFormElement }) {
+	function handleForm(event: React.FormEvent<HTMLFormElement>) {
 		event.preventDefault();
-		const form = new FormData(event.target);
+		const form = new FormData(event.currentTarget);
 		const entries: string[] = [];
 		for (const value of form.values()) {
 			entries.push(String(value));
 		}
-		let user = {
-			identifier: entries[0],
-			password: entries[1],
-		} as UserInfo;
-		console.log(user);
-		logIn(dispatch, user);
 	}
 
 	const form = (
@@ -34,11 +27,12 @@ export default function Register() {
 				<div className={styles.inputs}>
 					<Input label="Username" name="name" type="text" />
 					<Input label="Password" name="password" type="password" />
-                    <Input label="Confirm Password" name="confirmPassword" type="password" />
-                    <Input label="First Name" name="firstName" type="text"/>
-                    <Input label="Last Name" name="lastName" type="text" />
-                    <Select label="Gender" options={["Male","Female","Other"]} />
-                    <Input label="E-Mail" name="email" type="email"/>
+					<Input label="Confirm Password" name="confirmPassword" type="password" />
+					<Select
+						label="Gender"
+						options={["Male", "Female", "Other"]}
+					/>
+					<Input label="E-Mail" name="email" type="email" />
 				</div>
 				<input type="submit" value="Register" />
 			</form>
