@@ -1,5 +1,7 @@
-#navbar{
-    background-color: #293a3a;
-    width: 100%;
+.container{
     height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    align-items: center;
 }

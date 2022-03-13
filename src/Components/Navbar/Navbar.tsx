@@ -1,12 +1,12 @@
 import styles from './Navbar.module.scss';
 import { Link } from "react-router-dom";
+import UserArea from './UserArea';
 
 export default function Navbar(): JSX.Element{
     return (
-        <nav id={styles.navbar}>
-            <Link to="/">Home</Link>
-            <Link to="about">About</Link>
-            <Link to="contact">Contact</Link>
+        <nav className={styles.container}>
+            <h1>Pick It</h1>
+            <UserArea/>
         </nav>
     )
 }
