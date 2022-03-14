@@ -1,33 +1,21 @@
 import styles from './Home.module.scss';
-import balloon from '../../Assets/images/balloon.jpg';
+import { Collage, FeaturedCreators, PickOfTheDay, TrendingTags } from "./Components";
 
 export default function Home() {
     return (
-        <div className={styles.page}>
-            <h1 id={styles.title}>Explore</h1>
-            <section id={styles.first}>
-                <div id={styles.collage}>
-                    <img src={balloon} alt="collagePic"></img>
-                    <img src={balloon} alt="collagePic"></img>
-                    <img src={balloon} alt="collagePic"></img>
-                    <img src={balloon} alt="collagePic"></img>
-                    <img src={balloon} alt="collagePic"></img>
-                    <img src={balloon} alt="collagePic"></img>
-                    <img src={balloon} alt="collagePic"></img>
-                </div>
-                <div id={styles.trends}>
-                    <div id={styles.potd}>
-                        <h1>Pick of the day</h1>
-                        <img src={balloon} alt="POTD"></img>
-                    </div>
-                    <div id={styles.featured}>
-                        <h1>Featured Photographers</h1>
-                        <div id={styles.photograper}>
-
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-    )
+		<div className={styles.page}>
+			<h1 id={styles.title}>Explore</h1>
+			<section id={styles.first}>
+				<Collage/>
+				<div id={styles.trends}>
+					<PickOfTheDay/>
+					<TrendingTags/>
+					<FeaturedCreators/>
+				</div>
+			</section>
+			<div id={styles.latest}>
+				<h1>Latest Publications</h1>
+			</div>
+		</div>
+	);
 }

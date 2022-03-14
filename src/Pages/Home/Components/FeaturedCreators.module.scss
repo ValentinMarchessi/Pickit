@@ -1,0 +1,19 @@
+#creators {
+	width: 100%;
+	grid-column: 1 / span 2;
+	h1 {
+		margin-bottom: 10px;
+	}
+	.container {
+		display: flex;
+		gap: 10px;
+		overflow-x: auto;
+		padding: 10px;
+		img {
+			width: 15%;
+			aspect-ratio: 1/1;
+			object-fit: cover;
+			border-radius: 50%;
+		}
+	}
+}

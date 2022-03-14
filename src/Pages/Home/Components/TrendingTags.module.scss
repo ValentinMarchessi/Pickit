@@ -1,0 +1,12 @@
+.tags {
+	display: flex;
+	gap: 10px;
+	flex-flow: row wrap;
+
+	h1 {
+		font-size: 18px;
+		&::first-letter {
+			color: #b94f75;
+		}
+	}
+}

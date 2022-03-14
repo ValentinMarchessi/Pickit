@@ -1,12 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Manjari:wght@100;400;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 body {
 	margin: 0;
-	font-family: "Red Hat Display", "Manjari", BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+	font-family: "Red Hat Display", BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
 		"Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+	font-smooth: auto;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 
 	a,
 	a:visited {
@@ -30,11 +30,12 @@ body {
 		height: fit-content;
 		width: fit-content;
 		font-weight: 400;
+		font-style: normal;
 		color: white;
 		margin: 0;
 	}
 
-	background-color: rgb(24, 26, 27);
+	background-color: #0F0F0F;
 }
 
 code {

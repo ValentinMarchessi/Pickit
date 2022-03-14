@@ -9,7 +9,7 @@
         z-index: 1001;
         width: $size;
         height: $size;
-        border: ($size/4) solid rgb(221, 67, 170);
+        border: calc($size/4) solid rgb(221, 67, 170);
         border-radius: 50%;
         border-top-color: transparent;
         border-left-color: transparent;
