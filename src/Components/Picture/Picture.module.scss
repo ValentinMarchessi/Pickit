@@ -1,0 +1,32 @@
+.container {
+	position: relative;
+
+	#avatar {
+		position: absolute;
+		height: 25%;
+		aspect-ratio: 1/1;
+		top: 2%;
+		left: 2%;
+	}
+	#picture {
+		width: inherit;
+		height: inherit;
+		object-fit: cover;
+	}
+	#title {
+		position: absolute;
+		font-size: 5em;
+		mask-clip: text;
+		right: 3%;
+		bottom: 0;
+	}
+
+}
+.modal{
+	height: 40%;
+	width: 40%;
+	display:flex;
+	align-items: center;
+	justify-content: center;
+	background-color: gray;
+}
