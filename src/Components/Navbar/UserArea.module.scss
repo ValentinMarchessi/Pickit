@@ -1,10 +1,14 @@
-.container{
-    height: 100%;
-    display: flex;
-    align-items: center;
-    gap: .5em;
+.container {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	gap: 0.5em;
 
-    #username{
-        font-size: 15px;
-    }
+	#username {
+		font-size: 15px;
+	}
+	#avatar {
+		padding: 5px;
+		background-color: rgb(223, 223, 223);
+	}
 }

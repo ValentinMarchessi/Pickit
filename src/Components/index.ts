@@ -8,5 +8,7 @@ import Input from './Input/Input';
 import Lock from './Lock/Lock';
 import Select from './Select/Select';
 import Avatar from './Avatar/Avatar';
+import Picture from './Picture/Picture';
+import Modal from './Modal/Modal';
 
-export { Navbar, Clock, ProgressBar, Checkpoints, Login, Input, Lock, Register, Select, Avatar };
+export { Navbar, Clock, ProgressBar, Checkpoints, Login, Input, Lock, Register, Select, Avatar, Picture, Modal };

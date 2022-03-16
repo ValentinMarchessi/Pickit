@@ -1,6 +1,5 @@
-#avatar{
-    height: 50%;
-    padding: 5px;
-    background-color: white;
-    border-radius: 50%;
+.avatar {
+	height: 50%;
+	border-radius: 50%;
+	object-fit: cover;
 }

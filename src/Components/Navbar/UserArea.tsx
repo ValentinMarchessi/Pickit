@@ -6,7 +6,7 @@ export default function UserArea() {
     return (
         <div className={styles.container}>
             <h1 id={styles.username}>User123</h1>
-			<Avatar/>
+            <Avatar id={styles.avatar}/>
 		</div>
 	);
 }

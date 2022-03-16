@@ -4,13 +4,14 @@ import React from 'react';
 
 interface Props {
     src?: string;
+    id?: string;
 }
 
-export default function Avatar({ src }: Props) {
+export default function Avatar({ src, id }: Props) {
     function handleError(event: React.InvalidEvent<HTMLImageElement>) {
         event.currentTarget.src = fallback;
     }
     return (
-        <img id={styles.avatar} src={src || fallback} alt="avatar" onError={handleError}></img>
+        <img id={id} className={styles.avatar} src={src || fallback} alt="avatar" onError={handleError}></img>
     )
 }
