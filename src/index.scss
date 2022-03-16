@@ -1,5 +1,6 @@
 
 body {
+	position: relative;
 	margin: 0;
 	font-family: "Red Hat Display", BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
 		"Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
@@ -36,6 +37,25 @@ body {
 	}
 
 	background-color: #0F0F0F;
+
+	#modal-root{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		z-index: 10;
+		pointer-events: none;
+		align-items: center;
+		justify-content: center;
+		div,span,button{
+			z-index: 10;
+			pointer-events: all;
+		}
+	}
 }
 
 code {
