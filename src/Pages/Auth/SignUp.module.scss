@@ -1,0 +1,5 @@
+@use "../../SASS/mixins.scss" as Mixins;
+
+.page{
+    @include Mixins.page;
+}

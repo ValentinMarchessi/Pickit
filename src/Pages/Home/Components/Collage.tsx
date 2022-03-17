@@ -1,6 +1,7 @@
 import styles from "./Collage.module.scss";
 import balloon from "../../../Assets/images/balloon.jpg";
 import React from "react";
+import { Picture } from "../../../Components";
 
 export default function Collage() {
 
@@ -17,22 +18,22 @@ export default function Collage() {
 
 	return (
 		<div id={styles.collage} onScroll={infiniteScroll}>
-			<img src={balloon} alt="collagePic"></img>
-			<img src={balloon} alt="collagePic"></img>
-			<img src={balloon} alt="collagePic"></img>
-			<img src={balloon} alt="collagePic"></img>
-			<img src={balloon} alt="collagePic"></img>
-			<img src={balloon} alt="collagePic"></img>
-			<img src={balloon} alt="collagePic"></img>
-			<img src={balloon} alt="collagePic"></img>
-			<img src={balloon} alt="collagePic"></img>
-			<img src={balloon} alt="collagePic"></img>
-			<img src={balloon} alt="collagePic"></img>
-			<img src={balloon} alt="collagePic"></img>
-			<img src={balloon} alt="collagePic"></img>
-			<img src={balloon} alt="collagePic"></img>
-			<img src={balloon} alt="collagePic"></img>
-			<img src={balloon} alt="collagePic"></img>
+			<Picture src={balloon} title="Balloon"/>
+			<Picture src={balloon} title="Balloon"/>
+			<Picture src={balloon} title="Balloon"/>
+			<Picture src={balloon} title="Balloon"/>
+			<Picture src={balloon} title="Balloon"/>
+			<Picture src={balloon} title="Balloon"/>
+			<Picture src={balloon} title="Balloon"/>
+			<Picture src={balloon} title="Balloon"/>
+			<Picture src={balloon} title="Balloon"/>
+			<Picture src={balloon} title="Balloon"/>
+			<Picture src={balloon} title="Balloon"/>
+			<Picture src={balloon} title="Balloon"/>
+			<Picture src={balloon} title="Balloon"/>
+			<Picture src={balloon} title="Balloon"/>
+			<Picture src={balloon} title="Balloon"/>
+			<Picture src={balloon} title="Balloon"/>
 		</div>
 	);
 }

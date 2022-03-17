@@ -3,23 +3,10 @@ import ReactDOM from "react-dom";
 import "./index.scss";
 import App from "./App";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Login, Register, Picture } from "./Components";
-import { Landing, Debug, Home } from "./Pages";
+import { Landing, Debug, Home, Settings, SignUp } from "./Pages";
 import { persistor, store } from "./Redux/store";
 import { PersistGate } from "redux-persist/integration/react";
 import { Provider } from "react-redux";
-
-import man from './Assets/images/man.jpeg';
-import balloon from './Assets/images/balloon.jpg';
-
-const pictureProps = {
-	author: {
-		name: "Richard",
-		avatar: man,
-	},
-	title: "Balloon",
-	src: balloon,
-};
 
 ReactDOM.render(
 	<React.StrictMode>
@@ -30,8 +17,10 @@ ReactDOM.render(
 						<Route path="/" element={<App />}>
 							<Route index element={<Landing />} />
 							<Route path="home" element={<Home />} />
+							<Route path="settings" element={<Settings />} />
+							<Route path="signup" element={<SignUp />} />
 						</Route>
-						<Route path="/debug" element={<Debug component={<Picture {...pictureProps} />} />} />
+						<Route path="/debug" element={<Debug />} />
 					</Routes>
 				</BrowserRouter>
 			</PersistGate>

@@ -10,5 +10,6 @@ import Select from './Select/Select';
 import Avatar from './Avatar/Avatar';
 import Picture from './Picture/Picture';
 import Modal from './Modal/Modal';
+import Dropdown from './Dropdown/Dropdown';
 
-export { Navbar, Clock, ProgressBar, Checkpoints, Login, Input, Lock, Register, Select, Avatar, Picture, Modal };
+export { Navbar, Clock, ProgressBar, Checkpoints, Login, Input, Lock, Register, Select, Avatar, Picture, Modal, Dropdown };

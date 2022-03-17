@@ -1,32 +1,25 @@
-.container {
-	position: relative;
-
-	#avatar {
-		position: absolute;
-		height: 25%;
-		aspect-ratio: 1/1;
-		top: 2%;
-		left: 2%;
+#picture {
+	width: 90%;
+	object-fit: cover;
+	cursor: pointer;
+	transform: scale(1);
+	transition: transform 0.2s ease;
+	&:hover {
+		z-index: 2;
+		transform: scale(1.05);
 	}
-	#picture {
-		width: inherit;
-		height: inherit;
-		object-fit: cover;
-	}
-	#title {
-		position: absolute;
-		font-size: 5em;
-		mask-clip: text;
-		right: 3%;
-		bottom: 0;
-	}
-
 }
-.modal{
-	height: 40%;
-	width: 40%;
-	display:flex;
+
+.modal {
+	display: flex;
+	padding: 10px;
+	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	background-color: gray;
+	background-color: rgb(51, 51, 51);
+	border-radius: 5px;
+
+	img {
+		width: 50vw;
+	}
 }

@@ -1,28 +1,24 @@
 import styles from "./Picture.module.scss";
-import { Avatar, Modal } from "../";
+import { Modal } from "../";
 import { useState } from "react";
 
 interface Props {
-	author: {
-		name: string;
-		avatar: string;
-	};
-	title: string;
+	title?: string;
 	src: string;
+	id?: string;
+	className?: string;
 }
 
-export default function Picture({ author, title, src }: Props) {
+export default function Picture({ src, title, id, className }: Props) {
     const [modal, setModal] = useState(false);
 
-    return (
-		<div className={styles.container}>
-			<Avatar id={styles.avatar} src={author.avatar} />
+	return (
+		<>
 			<img id={styles.picture} src={src} alt="picture" onClick={() => setModal(true)} />
-			<h1 id={styles.title}>{title}</h1>
-			<Modal className={styles.modal} visible={modal}>
-				<h1>This is a test modal</h1>
-				<button onClick={() => setModal(false)}>Close Modal</button>
+			<Modal className={styles.modal} visible={modal} backdrop onBackdropClick={() => setModal(false)}>
+				<img src={src} alt="picture" />
+				<h1>{title}</h1>
 			</Modal>
-		</div>
+		</>
 	);
 }
